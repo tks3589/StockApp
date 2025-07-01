@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">StockApp</string>
+    <string name="sort_by_asc">依股票代號升序</string>
+    <string name="sort_by_desc">依股票代號降序</string>
+</resources>
