@@ -41,7 +41,11 @@ class StockViewModel: ViewModel(), IStockViewModel, KoinComponent {
             }.catch {
                 stockDataState.value = UiState.Error(it)
             }.collect {
-                stockDataState.value = UiState.Success(it)
+                if (it.isEmpty()) {
+                    stockDataState.value = UiState.Empty
+                } else {
+                    stockDataState.value = UiState.Success(it)
+                }
             }
         }
     }

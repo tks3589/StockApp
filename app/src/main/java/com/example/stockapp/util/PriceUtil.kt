@@ -1,5 +1,7 @@
 package com.example.stockapp.util
 
+import java.text.DecimalFormat
+
 object PriceUtil {
     fun String.isGreaterThanPrice(otherPriceString: String): Boolean {
         val thisPrice = this.toDoubleOrNull()
@@ -15,5 +17,25 @@ object PriceUtil {
     fun String.isGreaterThanZero(): Boolean {
         val price = this.toDoubleOrNull()
         return price != null && price > 0
+    }
+
+    fun String.toRoundedScale(): String {
+        return try {
+            val number = this.toDouble()
+            val formatter = DecimalFormat("#.###")
+            formatter.format(number)
+        } catch (e: NumberFormatException) {
+            "NaN"
+        }
+    }
+
+    fun String.toScientificNotation(): String {
+        return try {
+            val number = this.toDouble()
+            val formatter = DecimalFormat("0.###E0")
+            formatter.format(number)
+        } catch (e: NumberFormatException) {
+            "NaN"
+        }
     }
 }
