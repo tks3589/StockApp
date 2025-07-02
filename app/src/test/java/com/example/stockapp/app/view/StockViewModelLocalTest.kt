@@ -1,13 +1,13 @@
 package com.example.stockapp.app.view
 
 import com.example.stockapp.app.extensions.MainCoroutineScopeKotestExtension
-import com.example.stockapp.data.bean.BwibbuAllBean
-import com.example.stockapp.data.bean.StockDayAllBean
-import com.example.stockapp.data.bean.StockDayAvgAllBean
-import com.example.stockapp.data.bean.StockTotalBean
-import com.example.stockapp.repositroy.UiState
-import com.example.stockapp.repositroy.api.impl.IStockApiModel
-import com.example.stockapp.view.viewmodel.StockViewModel
+import com.example.stockapp.app.model.data.bean.BwibbuAllBean
+import com.example.stockapp.app.model.data.bean.StockDayAllBean
+import com.example.stockapp.app.model.data.bean.StockDayAvgAllBean
+import com.example.stockapp.app.model.data.bean.StockTotalBean
+import com.example.stockapp.app.model.state.UiState
+import com.example.stockapp.app.model.repository.api.IStockApiModel
+import com.example.stockapp.app.view.viewmodel.impl.StockViewModel
 import io.kotest.core.extensions.Extension
 import io.kotest.core.spec.style.FeatureSpec
 import io.kotest.core.test.TestCase
