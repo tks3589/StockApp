@@ -16,10 +16,15 @@ retrofit = "2.11.0"
 ksp = "2.1.10-1.0.31"
 koin-bom = "3.5.6"
 koin-annotations="1.4.0"
+kotest-main = "5.9.1"
+kotest-koin = "1.3.0"
+mockk = "1.13.17"
+coroutine = "1.10.1"
 
 [bundles]
 retrofit = ["retrofit-main", "retrofit-converter-gson"]
 koin = ["koin-core", "koin-android", "koin-android-compat", "koin-androidx-compose", "koin-annotations"]
+kotest = ["kotest-junit5", "kotest-datatest", "kotest-koin"]
 
 
 [libraries]
@@ -51,6 +56,11 @@ koin-android = { module = "io.insert-koin:koin-android" }
 koin-android-compat = { module = "io.insert-koin:koin-android-compat" }
 koin-annotations = { module = "io.insert-koin:koin-annotations", version.ref = "koin-annotations" }
 koin-ksp-compiler = { module = "io.insert-koin:koin-ksp-compiler", version.ref = "koin-annotations" }
+kotest-junit5 = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest-main"}
+kotest-datatest = { module = "io.kotest:kotest-framework-datatest", version.ref = "kotest-main"}
+kotest-koin = { module = "io.kotest.extensions:kotest-extensions-koin", version.ref = "kotest-koin"}
+mockk-main = { module = "io.mockk:mockk", version.ref = "mockk" }
+coroutine-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutine" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

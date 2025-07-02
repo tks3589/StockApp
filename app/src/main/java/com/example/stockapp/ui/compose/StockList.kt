@@ -63,7 +63,7 @@ fun StockScreen(viewModel: IStockViewModel) {
                 }
 
                 is UiState.Error -> {
-                    item { Text(text = "Error: ${state.exception}", color = Color.Red) }
+                    item { Text(text = "Error: ${state.message}", color = Color.Red) }
                 }
 
                 is UiState.Success -> {

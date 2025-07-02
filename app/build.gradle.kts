@@ -39,6 +39,16 @@ android {
     buildFeatures {
         compose = true
     }
+    testOptions {
+        unitTests.all {
+            it.useJUnitPlatform()
+        }
+    }
+    packagingOptions.resources.excludes += setOf(
+        "META-INF/LICENSE*",
+        "META-INF/AL2.0",
+        "META-INF/LGPL2.1"
+    )
 }
 
 dependencies {
@@ -59,8 +69,11 @@ dependencies {
     implementation(libs.bundles.retrofit)
     api(platform(libs.koin.bom))
     api(libs.bundles.koin)
+    api(libs.bundles.kotest)
     ksp(libs.koin.ksp.compiler)
+    api(libs.coroutine.test)
     testImplementation(libs.junit)
+    testImplementation(libs.mockk.main)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
